@@ -71,7 +71,6 @@ public class MultipleAddressBook {
             state.stream().filter(person -> person.getCity().equals(stateName))
                     .forEach(person -> System.out.println(person.getFirstName()));
         }
-        contacts.size();
     }
 
     /***
