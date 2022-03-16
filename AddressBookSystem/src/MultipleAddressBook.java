@@ -71,6 +71,7 @@ public class MultipleAddressBook {
             state.stream().filter(person -> person.getCity().equals(stateName))
                     .forEach(person -> System.out.println(person.getFirstName()));
         }
+        contacts.size();
     }
 
     /***
@@ -78,13 +79,11 @@ public class MultipleAddressBook {
      * @param addressBookMap - passing hash map
      */
     public void displayPeopleByPlace(HashMap<String, ArrayList<Contact>> addressBookMap) {
-        List<Contact> contacts;
-        for (String name : addressBookMap.keySet()) {
-            System.out.println("People in : " + name);
-            contacts = addressBookMap.get(name);
-            for (Contact contact : contacts) {
-                System.out.println(contact);
-            }
-        }
+        System.out.println("Enter place name : ");
+        String placeName = sc.next();
+        addressBookMap.values().stream()
+                .map(region -> region.stream()
+                .filter(person -> person.getCity().equals(placeName) || person.getState().equals(placeName)))
+                .forEach(person -> person.forEach(personDetails -> System.out.println(personDetails)));
     }
 }

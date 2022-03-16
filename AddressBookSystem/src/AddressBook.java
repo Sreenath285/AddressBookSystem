@@ -220,6 +220,7 @@ public class AddressBook {
             cityList.add(contact);
             personByCity.put(contact.getCity(), cityList);
         }
+        personByCity.size();
     }
 
     /***
@@ -235,6 +236,7 @@ public class AddressBook {
             stateList.add(contact);
             personByState.put(contact.getState(), stateList);
         }
+        personByState.size();
     }
 
     /***
