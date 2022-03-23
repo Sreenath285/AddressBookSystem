@@ -164,10 +164,10 @@ public class AddressBook {
         String city = readStringInput("Enter city : ");
         String state = readStringInput("Enter state : ");
         String email = readStringInput("Enter email : ");
-        long phoneNumber = readLongInput("Enter phone number : ");
         long zipCode = readLongInput("Enter zip code : ");
+        long phoneNumber = readLongInput("Enter phone number : ");
 
-        Contact contact =new Contact(firstName, lastName, address, city, state, email, phoneNumber, zipCode);
+        Contact contact =new Contact(firstName, lastName, address, city, state, email, zipCode, phoneNumber);
         addPersonToCity(contact);
         addPersonToState(contact);
         contactList.add(contact);
@@ -177,7 +177,7 @@ public class AddressBook {
 
     /***
      * created writingIntoFiles method to write contact details into
-     * text, csv and json files
+     * text and csv files
      */
     private void writingIntoFiles() {
         // writing contact into a text file
@@ -209,7 +209,8 @@ public class AddressBook {
 
         // writing contact into a json file
         try {
-            FileWriter fileWriter = new FileWriter("C:\\Users\\sreen\\Desktop\\AddressBookSystem\\src\\main\\resources\\AddressBook.json");
+            FileWriter fileWriter = new FileWriter
+                    ("C:\\Users\\sreen\\Desktop\\AddressBookSystem\\src\\main\\resources\\AddressBook.json");
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             Gson gson = new Gson();
             gson.toJson(contactList, bufferedWriter);
@@ -363,7 +364,7 @@ public class AddressBook {
     private void readFiles() throws IOException {
         String choiceFile = "";
         do {
-            System.out.println("1. Read text file \n2. Read CSV file \n3.Read JSON file");
+            System.out.println("1. Read text file \n2. Read CSV file \n3. Read JSON file");
             System.out.print("Enter choice : ");
             int choice = sc.nextInt();
             switch (choice) {
@@ -373,7 +374,7 @@ public class AddressBook {
                 case 2:
                     readContactCSVFile();
                     break;
-                case 3:
+                case 3 :
                     readContactJSONFile();
                     break;
                 default:
@@ -395,7 +396,7 @@ public class AddressBook {
                     new FileReader("C:\\Users\\sreen\\Desktop\\AddressBookSystem\\src\\main\\resources\\AddressBook.txt"));
             String line = " ";
             while (line != null){
-                System.out.print(line);
+                System.out.println(line);
                 line = bufferedReader.readLine();
             }
             bufferedReader.close();
