@@ -1,0 +1,1 @@
+[Contact{firstName='Sreenath', lastName='Emidi', address='Adoni', city='Adoni', state='AndhraPradesh', email='sree@gmail.com', zipCode=9988776655, phoneNumber=518301}]
